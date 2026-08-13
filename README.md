@@ -45,6 +45,8 @@ sudo systemctl status vsftpd
 ```
 
 Result: `vsftpd.service` reported `active (running)`.
+<img width="405" height="263" alt="Screenshot 2026-08-13 155214" src="https://github.com/user-attachments/assets/8f854911-d6eb-49a1-ad30-0e7870baa37a" />
+
 
 ### 3. Created a test account to authenticate with
 
@@ -55,6 +57,8 @@ sudo adduser ftptest
 ### 4. Started a Wireshark capture on Kali before connecting
 
 Selected the `eth0` interface and started the capture before any FTP traffic was generated, so the full authentication handshake would be recorded.
+<img width="860" height="359" alt="Screenshot 2026-08-13 144723" src="https://github.com/user-attachments/assets/444e739b-2423-42a5-b883-26aca0313c8a" />
+
 
 ### 5. Connected to the FTP server and logged in
 
@@ -75,9 +79,14 @@ Right-clicked the `PASS` packet and selected **Follow → TCP Stream** to view t
 
 FTP transmits usernames and passwords as **unencrypted plaintext**. Anyone with visibility into the network segment can passively capture login credentials with no specialized tools beyond Wireshark itself.
 
-![FTP login filtered in Wireshark](ftp-capture-filtered.png)
 
-![Plaintext credentials in Follow TCP Stream](ftp-plaintext-credentials.png)
+
+
+
+<img width="497" height="328" alt="Screenshot 2026-08-13 150636" src="https://github.com/user-attachments/assets/b64506a3-2b14-4fb4-8073-5bada278c3c7" />
+
+<img width="855" height="421" alt="Screenshot 2026-08-13 155513" src="https://github.com/user-attachments/assets/ecc07b19-2f1e-48df-984b-fac309f401a2" />
+
 
 ## Risk
 
